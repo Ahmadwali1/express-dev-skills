@@ -2,10 +2,33 @@
 <html>
   <head>
     <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <style>
+      body {
+        background-color: rgb(189, 148, 148);
+        text-align: center;
+        
+      }
+      h1 {
+        color: rgb(202, 87, 87);
+        font-size: 40px;
+        font-style: italic;
+        font-family: initial;
+      }
+      p {
+        font-size: large;
+        color: rgb(255, 255, 255);
+      }
+      a {
+        font-size: 20px;
+        color: rgb(91, 134, 91);
+      }
+    </style>
   </head>
   <body>
     <h1><%= title %></h1>
     <p>Welcome to <%= title %></p>
+    <p>click the link below</p>
+    <a href="/skills">Skills list</a>
   </body>
 </html>

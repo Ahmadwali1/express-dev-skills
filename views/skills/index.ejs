@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dev skill lab</title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <style>
+   body {
+    background-color: rgb(96, 135, 145);
+    color: rgb(6, 241, 116);
+    
+   }
+   h1{
+    color: wheat;
+    text-align: center;
+    font-size: 50px;
+    font-family:fantasy;
+    text-decoration:underline;
+   }
+   a {
+    color: wheat;
+   }
+  </style>
+</head>
+<body>
+  <a href="/">Home</a>
+  <h1>Developer skills</h1>
+  <ul>
+    <% skills.forEach(function(sk) { %>
+    <li>
+      <%= sk.skill%>
+
+      -
+      <%= sk.correctAnswer ? 'correctAnswer' : 'not correctAnswer'%>
+      </li>
+    <% });%>
+  </ul>
+</body>
+</html>
