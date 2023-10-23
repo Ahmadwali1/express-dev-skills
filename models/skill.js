@@ -1,15 +1,28 @@
 const skills = [
-  {skill: 'understand css and html', correctAnswer: true},
-  {skill: 'know how to use javascript', correctAnswer: true},
-  {skill: 'know to play good game', correctAnswer: false},
-  {skill: 'know how to work with node', correctAnswer: true},
-  {skill: 'understand his own code', correctAnswer: true},
-]
+  { id: 456739, skill: "understand css and html", correctAnswer: true },
+  { id: 487654, skill: "know how to use javascript", correctAnswer: true },
+  { id: 434567, skill: "know to play good game", correctAnswer: false },
+  { id: 479123, skill: "know how to work with node", correctAnswer: true },
+  { id: 487223, skill: "understand his own code", correctAnswer: true },
+];
+
+module.exports = {
+  getAll,
+  getOne,
+  create,
+};
+
+function create(skill) {
+  skill.id = Date.now() % 1000000;
+  skill.correctAnswer = false;
+  skills.push(skill);
+}
 
 function getAll() {
   return skills;
 }
 
-module.exports = {
-  getAll
+function getOne(id) {
+  id = parseInt(id);
+  return skills.find((skill) => skill.id === id);
 }
