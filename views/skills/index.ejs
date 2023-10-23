@@ -1,12 +1,19 @@
 <%- include('../partials/header')%>
-    <ul>
-      <% skills.forEach(function(sk) { %>
-      <li>
-        <a href="/skills/<%= sk.id %>"><%= sk.skill%></a>
+<ul>
+  <% skills.forEach(function(sk) { %>
+  <li>
+    <form
+      action="/skills/<%= sk.id %>?_method=DELETE"
+      method="POST"
+      class="delete-form"
+    >
+      <button type="submit">X</button>
+    </form>
+    <a href="/skills/<%= sk.id %>"><%= sk.skill%></a>
 
-        - <%= sk.correctAnswer ? 'correctAnswer' : 'not correctAnswer'%>
-      </li>
-      <% });%>
-    </ul>
-    <a href="/skills/new">Add skill</a>
-    <%- include('../partials/footer')%>
+    - <%= sk.correctAnswer ? 'correctAnswer' : 'not correctAnswer'%>
+  </li>
+  <% });%>
+</ul>
+<a href="/skills/new">Add skill</a>
+<%- include('../partials/footer')%>
